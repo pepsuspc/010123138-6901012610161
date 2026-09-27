@@ -1,0 +1,26 @@
+[   
+    {
+        "student_id": 22333,
+        "name":"Auto",
+        "age": 17,
+        "course": "IE"
+    },
+    {
+        "student_id": 22216,
+        "name":"Kim",
+        "age": 19,
+        "course": "Law"
+    },
+    {
+        "student_id": 22257,
+        "name":"Tle",
+        "age": 20,
+        "course": "ISEE"
+    },
+    {
+        "student_id": 22400,
+        "name":"Guide",
+        "age": 15,
+        "course": "CMM"
+    }
+]
