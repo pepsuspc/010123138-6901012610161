@@ -1,0 +1,22 @@
+[
+    {
+        "product_name":"Arduino_Uno",
+        "price": 500,
+        "quantity": 3
+    },
+    {
+        "product_name":"ESP32",
+        "price": 250,
+        "quantity": 5
+    },
+    {
+        "product_name":"Raspberry_Pi",
+        "price": 1500,
+        "quantity": 2
+    },
+    {
+        "product_name":"ESP32_CAM",
+        "price": 150,
+        "quantity": 4
+    }
+]
