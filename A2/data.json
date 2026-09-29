@@ -1,0 +1,160 @@
+{
+    "tools": [
+        {
+            "code": "EQ001",
+            "name": "มัลติมิเตอร์",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ002",
+            "name": "ออสซิลโลสโคป",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ003",
+            "name": "บอร์ด Arduino Uno",
+            "status": "ถูกยืม"
+        },
+        {
+            "code": "EQ004",
+            "name": "บอร์ด Raspberry Pi",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ005",
+            "name": "หัวแร้งบัดกรี",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ006",
+            "name": "แหล่งจ่ายไฟ",
+            "status": "ถูกยืม"
+        },
+        {
+            "code": "EQ007",
+            "name": "เครื่องกำเนิดสัญญาณ",
+            "status": "ถูกยืม"
+        },
+        {
+            "code": "EQ008",
+            "name": "ชุดโพรบวัดสัญญาณ",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ009",
+            "name": "คีมย้ำหางปลา",
+            "status": "ว่าง"
+        },
+        {
+            "code": "EQ010",
+            "name": "เบรดบอร์ด 830 จุด",
+            "status": "ถูกยืม"
+        }
+    ],
+    "members": [
+        {
+            "member_id": "6901012610161",
+            "name": "ปิริยะ ชูเอมทรัพย์",
+            "strike": 0
+        },
+        {
+            "member_id": "6901012610129",
+            "name": "กรนิศ ลำดับวงศ์",
+            "strike": 3
+        },
+        {
+            "member_id": "6901012610439",
+            "name": "ธนพัฒน์ พัฒนาสกุลวงศ์",
+            "strike": 0
+        },
+        {
+            "member_id": "6901012610188",
+            "name": "ภูรเศศ เกษอาด",
+            "strike": 0
+        },
+        {
+            "member_id": "6901012610528",
+            "name": "ธนวัฒน์ บุญมา",
+            "strike": 0
+        },
+        {
+            "member_id": "6901012610561",
+            "name": "สัณหณัฐ สังข์ทอง",
+            "strike": 0
+        }
+    ],
+    "loans": [
+        {
+            "loan_id": "L001",
+            "tool_code": "EQ001",
+            "member_id": "6901012610129",
+            "loan_date": "2026-07-05",
+            "duration": 7,
+            "due_date": "2026-07-12",
+            "return_date": "2026-07-14"
+        },
+        {
+            "loan_id": "L002",
+            "tool_code": "EQ002",
+            "member_id": "6901012610129",
+            "loan_date": "2026-07-20",
+            "duration": 7,
+            "due_date": "2026-07-27",
+            "return_date": "2026-08-01"
+        },
+        {
+            "loan_id": "L003",
+            "tool_code": "EQ008",
+            "member_id": "6901012610129",
+            "loan_date": "2026-08-10",
+            "duration": 5,
+            "due_date": "2026-08-15",
+            "return_date": "2026-08-20"
+        },
+        {
+            "loan_id": "L004",
+            "tool_code": "EQ005",
+            "member_id": "6901012610439",
+            "loan_date": "2026-08-25",
+            "duration": 14,
+            "due_date": "2026-09-08",
+            "return_date": "2026-09-08"
+        },
+        {
+            "loan_id": "L005",
+            "tool_code": "EQ003",
+            "member_id": "6901012610188",
+            "loan_date": "2026-09-01",
+            "duration": 7,
+            "due_date": "2026-09-08",
+            "return_date": null
+        },
+        {
+            "loan_id": "L006",
+            "tool_code": "EQ006",
+            "member_id": "6901012610528",
+            "loan_date": "2026-09-03",
+            "duration": 3,
+            "due_date": "2026-09-06",
+            "return_date": null
+        },
+        {
+            "loan_id": "L007",
+            "tool_code": "EQ007",
+            "member_id": "6901012610561",
+            "loan_date": "2026-09-10",
+            "duration": 7,
+            "due_date": "2026-09-17",
+            "return_date": null
+        },
+        {
+            "loan_id": "L008",
+            "tool_code": "EQ010",
+            "member_id": "6901012610161",
+            "loan_date": "2026-09-12",
+            "duration": 14,
+            "due_date": "2026-09-26",
+            "return_date": null
+        }
+    ]
+}
