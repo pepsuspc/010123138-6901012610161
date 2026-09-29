@@ -9,7 +9,7 @@ class myBag():
         if Things_remove in self.Things:
             self.Things.remove(Things_remove)
         else:
-            print(f"{item} is not in the bag")
+            print(f"{Things_remove} is not in the bag")
 
 mybag = myBag(["Laptop","Wallet","Mouse"])
 print(mybag.show())
