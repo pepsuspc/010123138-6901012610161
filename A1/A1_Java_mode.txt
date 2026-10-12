@@ -1,0 +1,99 @@
+float g = 9.8f;
+float damping = 0.02f;
+
+final int MIN_L = 50;
+final int MAX_L = 700;
+final int DEFAULT_L = 500;
+final int DEFAULT_THETA_DEG = 45;
+final int BOB_RADIUS = 20;
+
+int pivot_x = 0;
+int pivot_y = 0;
+int L = 0;
+float theta = 0.0f;
+float omega = 0.0f;
+float bob_x = 0;
+float bob_y = 0;
+boolean is_dragging = false;
+
+void setup() {
+  size(1000, 900);
+  pivot_x = width / 2;
+  pivot_y = 100;
+  L = DEFAULT_L;
+  theta = radians(DEFAULT_THETA_DEG);
+  omega = 0.0f;
+  textSize(16);
+}
+
+void draw() {
+  background(25);
+
+  if (!is_dragging) {
+    update_physics();
+  }
+
+  display();
+}
+
+void update_physics() {
+  float alpha = -(g / L) * sin(theta) - damping * omega;
+  omega += alpha;
+  theta += omega;
+}
+
+void display() {
+  bob_x = pivot_x + L * sin(theta);
+  bob_y = pivot_y + L * cos(theta);
+
+  stroke(255);
+  strokeWeight(2);
+  line(pivot_x, pivot_y, bob_x, bob_y);
+
+  noStroke();
+  fill(255);
+  ellipse(pivot_x, pivot_y, 8, 8);
+
+  fill(230, 90, 70);
+  ellipse(bob_x, bob_y, BOB_RADIUS * 2, BOB_RADIUS * 2);
+
+  fill(255);
+  text("Theta: " + nf(degrees(theta), 0, 2) + " deg", 20, 30);
+  text("L: " + L + " px", 20, 55);
+  text("Angular velocity: " + nf(omega, 0, 4) + " rad/frame", 20, 80);
+}
+
+void mousePressed() {
+  if (dist(mouseX, mouseY, bob_x, bob_y) < BOB_RADIUS + 10) {
+    is_dragging = true;
+  }
+}
+
+void mouseDragged() {
+  if (is_dragging) {
+    float dx = mouseX - pivot_x;
+    float dy = mouseY - pivot_y;
+    theta = atan2(dx, dy);
+    omega = 0.0f;
+  }
+}
+
+void mouseReleased() {
+  is_dragging = false;
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      L = min(MAX_L, L + 10);
+    } else if (keyCode == DOWN) {
+      L = max(MIN_L, L - 10);
+    }
+  } else {
+    if (key == 'r' || key == 'R') {
+      L = DEFAULT_L;
+      theta = radians(DEFAULT_THETA_DEG);
+      omega = 0.0f;
+    }
+  }
+}
