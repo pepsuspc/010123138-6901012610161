@@ -1,0 +1,103 @@
+g = 9.8             
+damping = 0.02     
+
+MIN_L = 50
+MAX_L = 700
+DEFAULT_L = 500
+DEFAULT_THETA_DEG = 45     
+BOB_RADIUS = 20
+
+pivot_x = 0
+pivot_y = 0
+L = 0
+theta = 0.0
+omega = 0.0
+bob_x = 0
+bob_y = 0
+is_dragging = False
+
+
+def setup():
+    global pivot_x, pivot_y, L, theta, omega
+    size(1000, 900)
+    pivot_x = width / 2
+    pivot_y = 100
+    L = DEFAULT_L
+    theta = radians(DEFAULT_THETA_DEG)
+    omega = 0.0
+    textSize(16)
+
+
+def draw():
+    background(25)
+
+    if not is_dragging:
+        update_physics()
+
+    display()
+
+
+def update_physics():
+    global theta, omega
+
+    alpha = -(g / L) * sin(theta) - damping * omega
+    omega += alpha
+    theta += omega
+
+
+def display():
+    global bob_x, bob_y
+
+    bob_x = pivot_x + L * sin(theta)
+    bob_y = pivot_y + L * cos(theta)
+
+    stroke(255)
+    strokeWeight(2)
+    line(pivot_x, pivot_y, bob_x, bob_y)
+
+    noStroke()
+    fill(255)
+    ellipse(pivot_x, pivot_y, 8, 8)
+
+    fill(230, 90, 70)
+    ellipse(bob_x, bob_y, BOB_RADIUS * 2, BOB_RADIUS * 2)
+
+    fill(255)
+    text("Theta: " + nf(degrees(theta), 0, 2) + " deg", 20, 30)
+    text("L: " + str(int(L)) + " px", 20, 55)
+    text("Angular velocity: " + nf(omega, 0, 4) + " rad/frame", 20, 80)
+
+
+def mousePressed():
+    global is_dragging
+    if dist(mouseX, mouseY, bob_x, bob_y) < BOB_RADIUS + 10:
+        is_dragging = True
+
+
+def mouseDragged():
+    global theta, omega
+    if is_dragging:
+        dx = mouseX - pivot_x
+        dy = mouseY - pivot_y
+        theta = atan2(dx, dy)
+        omega = 0.0
+
+
+def mouseReleased():
+    global is_dragging
+    is_dragging = False
+
+
+def keyPressed():
+    global L, theta, omega
+
+    if key == CODED:
+        if keyCode == UP:
+            L = min(MAX_L, L + 10)
+        elif keyCode == DOWN:
+            L = max(MIN_L, L - 10)
+    else:
+        if key == 'r' or key == 'R':
+            L = DEFAULT_L
+            theta = radians(DEFAULT_THETA_DEG)
+            omega = 0.0
