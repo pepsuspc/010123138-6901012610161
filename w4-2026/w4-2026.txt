@@ -1,0 +1,48 @@
+# w4 : Processing (Python mode)
+# while loop : fixed number, until a sum, until a condition (flag)
+
+def setup():
+    size(500, 500)
+    frameRate(2)
+
+def draw():
+    background(255)
+    draw_vertical_lines(100, 100, 400, 100)
+    draw_rain_drops(10)
+    draw_rain_drops_until(100)
+    draw_rain_drops_until_r_below(5)
+
+def draw_circle(x, y, r):
+    ellipse(x, y, r * 2, r * 2)
+
+def draw_vertical_lines(x1, y1, x2, y2):
+    space = abs(x1 - x2) / 5
+    while x1 < x2:
+        line(x1, y1 - 50, x1, y1 + 50)
+        x1 = x1 + space
+
+def draw_rain_drops(n):  # loop : fixed number
+    i = 0
+    while i < n:
+        x = random(100, 400)
+        y = random(150, 350)
+        r = random(3, 30)
+        draw_circle(x, y, r)
+        i = i + 1
+
+def draw_rain_drops_until(volume):  # loop : until specified sum/volume
+    sum = 0
+    while sum < volume:
+        r = random(3, 30)
+        draw_circle(random(100, 400), random(150, 350), r)
+        sum = sum + r
+
+def draw_rain_drops_until_r_below(value):  # loop : until specified condition
+    r_flag = True  # use of flag
+    while r_flag:
+        x = random(100, 400)
+        y = random(150, 350)
+        r = random(3, 30)
+        draw_circle(x, y, r)
+        if r < value:
+            r_flag = False
