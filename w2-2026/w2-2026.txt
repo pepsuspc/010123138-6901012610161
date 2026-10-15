@@ -1,0 +1,25 @@
+# w2 : Processing (Python mode)
+# variables, user-defined function, setup() / draw(), global variable, if
+
+x = 100  # global variable (user-defined)
+
+def setup():  # will be called 1 time
+    size(500, 500)
+
+def draw():  # will be called repeatedly
+    global x
+    draw_letter_H(200, 100)
+    draw_balloon(x, mouseY)  # mouseY is built-in
+    x = x + 10
+    if x > width:  # width is built-in
+        x = 100
+
+def draw_letter_H(x, y):  # x, y = upper left
+    line(x, y, x, y + 200)
+    line(x + 100, y, x + 100, y + 200)
+    middle = y + 100
+    line(x, middle, x + 100, middle)
+
+def draw_balloon(x, y):
+    ellipse(x, y, 100, 100)
+    line(x, y + 50, x, y + 200)
