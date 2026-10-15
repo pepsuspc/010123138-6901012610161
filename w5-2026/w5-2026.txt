@@ -1,0 +1,27 @@
+# w5 : Processing (Python mode)
+# parallel arrays, start from empty list and append()
+
+n = 10
+x = []
+y = []
+s = []  # speed
+
+def setup():
+    size(1000, 1000)
+    i = 0
+    while i < n:
+        x.append(random(100, 900))
+        y.append(random(100, 500))
+        s.append(random(1, 5))
+        i = i + 1
+
+def draw():
+    background(255)
+    i = 0
+    while i < n:
+        draw_circle(x[i], y[i], 20)
+        y[i] = y[i] + s[i]
+        i = i + 1
+
+def draw_circle(x, y, r):
+    ellipse(x, y, r * 2, r * 2)
