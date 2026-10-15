@@ -1,0 +1,40 @@
+# w3 : Processing (Python mode)
+# parameters, global vs local variable, random(), function with return value, if-else
+
+x = 200  # global variable (not inside a function)
+
+def setup():
+    size(500, 500)
+    frameRate(5)
+
+def draw():
+    global x
+    background(255)
+    draw_balloon(x, 200)
+
+    # random() returns a value -> send it to another function
+    draw_circle(random(100, 400), random(150, 350), random(3, 30))
+
+    # show distance to the mouse using a line (on the same side as the mouse)
+    d = cal_distance(x, 200, mouseX, mouseY)
+    if mouseX > x:
+        line(x, 200, x + d, 200)
+    else:
+        line(x, 200, x - d, 200)
+
+    x = x + 10
+    if x > width:
+        x = 100
+
+def draw_circle(x, y, r):
+    ellipse(x, y, r * 2, r * 2)  # circle with radius r
+
+def draw_balloon(x, y):  # parameters are local variables
+    draw_circle(x, y, 50)
+    line(x, y + 50, x, y + 200)
+
+def cal_distance(x1, y1, x2, y2):
+    diffx = abs(x1 - x2)
+    diffy = abs(y1 - y2)
+    result = sqrt(diffx * diffx + diffy * diffy)  # Pythagorean theorem
+    return result
