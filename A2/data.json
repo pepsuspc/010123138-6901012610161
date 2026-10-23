@@ -13,7 +13,7 @@
         {
             "code": "EQ003",
             "name": "บอร์ด Arduino Uno",
-            "status": "ถูกยืม"
+            "status": "ว่าง"
         },
         {
             "code": "EQ004",
@@ -28,12 +28,12 @@
         {
             "code": "EQ006",
             "name": "แหล่งจ่ายไฟ",
-            "status": "ถูกยืม"
+            "status": "ว่าง"
         },
         {
             "code": "EQ007",
             "name": "เครื่องกำเนิดสัญญาณ",
-            "status": "ถูกยืม"
+            "status": "ว่าง"
         },
         {
             "code": "EQ008",
@@ -48,14 +48,14 @@
         {
             "code": "EQ010",
             "name": "เบรดบอร์ด 830 จุด",
-            "status": "ถูกยืม"
+            "status": "ว่าง"
         }
     ],
     "members": [
         {
             "member_id": "6901012610161",
             "name": "พิริยะ ชูเอมทรัพย์",
-            "strike": 0
+            "strike": 1
         },
         {
             "member_id": "6901012610129",
@@ -70,17 +70,17 @@
         {
             "member_id": "6901012610188",
             "name": "ภูรเศศ เกษอาด",
-            "strike": 0
+            "strike": 1
         },
         {
             "member_id": "6901012610528",
             "name": "ธนวัฒน์ บุญมา",
-            "strike": 0
+            "strike": 1
         },
         {
             "member_id": "6901012610561",
             "name": "สัณหณัฐ สังข์ทอง",
-            "strike": 0
+            "strike": 1
         }
     ],
     "loans": [
@@ -127,7 +127,7 @@
             "loan_date": "2026-09-01",
             "duration": 7,
             "due_date": "2026-09-08",
-            "return_date": null
+            "return_date": "2026-10-23"
         },
         {
             "loan_id": "L006",
@@ -136,7 +136,7 @@
             "loan_date": "2026-09-03",
             "duration": 3,
             "due_date": "2026-09-06",
-            "return_date": null
+            "return_date": "2026-10-23"
         },
         {
             "loan_id": "L007",
@@ -145,7 +145,7 @@
             "loan_date": "2026-09-10",
             "duration": 7,
             "due_date": "2026-09-17",
-            "return_date": null
+            "return_date": "2026-10-23"
         },
         {
             "loan_id": "L008",
@@ -154,7 +154,7 @@
             "loan_date": "2026-09-12",
             "duration": 14,
             "due_date": "2026-09-26",
-            "return_date": null
+            "return_date": "2026-10-23"
         }
     ]
 }
