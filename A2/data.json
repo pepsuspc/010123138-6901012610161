@@ -164,6 +164,42 @@
             "duration": 6,
             "due_date": "2026-11-02",
             "return_date": "2026-10-27"
+        },
+        {
+            "loan_id": "L010",
+            "tool_code": "EQ001",
+            "member_id": "6901012610161",
+            "loan_date": "2026-11-10",
+            "duration": 2,
+            "due_date": "2026-11-12",
+            "return_date": "2026-11-10"
+        },
+        {
+            "loan_id": "L011",
+            "tool_code": "EQ003",
+            "member_id": "6901012610161",
+            "loan_date": "2026-11-10",
+            "duration": 2,
+            "due_date": "2026-11-12",
+            "return_date": "2026-11-10"
+        },
+        {
+            "loan_id": "L012",
+            "tool_code": "EQ007",
+            "member_id": "6901012610161",
+            "loan_date": "2026-11-10",
+            "duration": 2,
+            "due_date": "2026-11-12",
+            "return_date": "2026-11-10"
+        },
+        {
+            "loan_id": "L013",
+            "tool_code": "EQ006",
+            "member_id": "6901012610161",
+            "loan_date": "2026-11-10",
+            "duration": 2,
+            "due_date": "2026-11-12",
+            "return_date": "2026-11-10"
         }
     ]
 }
